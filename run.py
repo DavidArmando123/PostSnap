@@ -1,7 +1,12 @@
-
-from app import create_app
+from app import create_app, db
+import os
 
 app = create_app()
 
-if __name__ == "__main__":
+
+with app.app_context():
+    if not os.path.exists("postsnap.db"):  
+        db.create_all()
+
+if __name__ == '__main__':
     app.run(debug=True)

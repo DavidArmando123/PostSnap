@@ -9,3 +9,6 @@ venv/
 
 # Ignorar banco de dados SQLite
 *.db
+*.env
+
+static/
